@@ -29,7 +29,9 @@ public class hook extends environment{
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, duration);
         login.user_in_home_page();
-        login.user_click_yes();
+        login.user_click_skip();
+//        login.user_click_yes();
+//        login.scroll.swiperight();
         login.user_found_button_sign_in();
         login.user_click_check_box();
         login.user_click_sign_in();

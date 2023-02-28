@@ -1,8 +1,8 @@
 package StepDefinition;
 
-import Directory.scroll;
-import config.environment;
-import objekrepository.pageLogin;
+import Helper.scroll;
+import Config.environment;
+import ObjectRepository.pageLogin;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
@@ -29,7 +29,7 @@ public class login extends environment{
     }
     public void swipehorizontal() throws InterruptedException{
 
-        scroll.swiperight(driver, 0.7, 0.,0.3,1.3 );
+        scroll.swiperight(driver, 0.7, 0.3,0.5,0.5 );
     }
 
     public void user_found_button_sign_in() {

@@ -1,6 +1,6 @@
 Feature: Create Company
 
-  Scenario: Ensure user successfully create new company
+  Scenario: Ensure user create new company
     Given user in page Home
     When user click Create New Company
     And user input field name
@@ -9,7 +9,7 @@ Feature: Create Company
     Then user successfully create company
 
 
-  Scenario: Ensure user failed create new company with null name and description
+  Scenario: Ensure user create new company
     Given user in page Home
     When user click Create New Company
     And user click create

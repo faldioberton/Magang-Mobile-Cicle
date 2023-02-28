@@ -1,4 +1,4 @@
-package Directory;
+package Helper;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;

@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/feature",
-        glue = "Stepdefinition",
+        features = "src/test/resources/Feature/TC3_Blast-MainPage.feature",
+        glue = "StepDefinition",
         plugin = "html:target/HTML_report.html"
 )
 public class runAll {

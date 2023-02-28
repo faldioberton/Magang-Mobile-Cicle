@@ -1,14 +1,20 @@
 package StepDefinition;
 
-import config.environment;
+import Config.environment;
+import Helper.accessFile;
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import objekrepository.pageTeam;
+import ObjectRepository.pageTeam;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class team extends environment{
 
     pageTeam pageTeam = new pageTeam();
+    String dataTeamName = "src/test/resources/File/teamName.txt";
+    Faker faker = new Faker();
+    accessFile accessFile = new accessFile();
 
     @Then("user in page Company")
     public void user_in_board_company() {
@@ -39,9 +45,11 @@ public class team extends environment{
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(pageTeam.getType_name())
         );
-        driver.findElement(pageTeam.getType_name()).click();
-        String input = "Batch 16";
-        driver.findElement(pageTeam.getType_name()).sendKeys(input);
+        WebElement txt_teamName = driver.findElement(pageTeam.getType_name());
+        txt_teamName.click();
+        String teamName = "Company " + faker.number().numberBetween(111, 99999);
+        txt_teamName.sendKeys(teamName);
+        accessFile.writeToFile(dataTeamName, teamName);
     }
     @When("user input field_description")
     public void user_input_field__description() {
