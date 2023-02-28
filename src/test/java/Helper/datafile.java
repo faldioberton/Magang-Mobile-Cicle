@@ -1,4 +1,4 @@
-package Directory;
+package Helper;
 
 public class datafile {
         String name_companies = "Sekolah QA";

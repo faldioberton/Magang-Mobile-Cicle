@@ -3,10 +3,16 @@ package StepDefinition;
 import Config.environment;
 import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import org.apache.commons.io.FileUtils;
 import org.junit.After;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -29,7 +35,9 @@ public class hook extends environment{
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, duration);
         login.user_in_home_page();
-        login.user_click_yes();
+        login.user_click_skip();
+//        login.user_click_yes();
+//        login.scroll.swiperight();
         login.user_found_button_sign_in();
         login.user_click_check_box();
         login.user_click_sign_in();
@@ -38,7 +46,14 @@ public class hook extends environment{
     }
 
      @After
-     public void after(){
-      // driver.quit();
+     public void after(Scenario scenario) throws IOException {
+         File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+         if (scenario.isFailed()){
+             FileUtils.copyFile(srcFile, new File(System.getProperty("user.dir") + "/src/test/resources/screenshots/failed/" + scenario.getName() + ".png"));
+         } else {
+             FileUtils.copyFile(srcFile, new File(System.getProperty("user.dir") + "/src/test/resources/screenshots/success/" + scenario.getName() + ".png"));
+         }
+
+         driver.quit();
      }
 }

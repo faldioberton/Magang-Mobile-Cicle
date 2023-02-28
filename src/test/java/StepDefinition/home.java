@@ -1,18 +1,22 @@
 package StepDefinition;
 
-import Directory.datafile;
+import Helper.accessFile;
+import com.github.javafaker.Faker;
 import Config.environment;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import ObjectRepository.pageHome;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class home extends environment{
 
     pageHome pageHome = new pageHome();
-    datafile datafile = new datafile();
+    accessFile accessFile = new accessFile();
+    Faker faker = new Faker();
+    String dataCompanyName = "src/test/resources/File/companyName.txt";
 
     @Given("user in page Home")
     public void user_in_page_home() {
@@ -32,10 +36,11 @@ public class home extends environment{
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(pageHome.getField_name())
         );
-        driver.findElement(pageHome.getField_name()).click();
-        String companyName = "Sekolah QA";
-        driver.findElement(pageHome.getField_name()).sendKeys(companyName);
-
+        WebElement txt_companyName = driver.findElement(pageHome.getField_name());
+        txt_companyName.click();
+        String companyName = "Company " + faker.number().numberBetween(111, 99999);
+        txt_companyName.sendKeys(companyName);
+        accessFile.writeToFile(dataCompanyName, companyName);
     }
     @And("user input field description")
     public void user_input_field_description() {
@@ -55,6 +60,7 @@ public class home extends environment{
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(pageHome.getBtn_notif())
         );
+        driver.findElement(pageHome.getBtn_notif()).isDisplayed();
         driver.findElement(pageHome.getBtn_cancel()).click();
     }
 }
