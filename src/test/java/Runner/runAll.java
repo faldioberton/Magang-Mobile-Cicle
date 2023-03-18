@@ -8,8 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/Feature/TC3_Blast-MainPage.feature",
         glue = "StepDefinition",
-        plugin = "html:target/HTML_report.html",
-        tags = "@FirstRelease"
+        plugin = "html:target/HTML_report.html"
 )
 public class runAll {
 }

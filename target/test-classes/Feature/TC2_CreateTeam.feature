@@ -1,7 +1,7 @@
 Feature: Create Team
 
   @Positive
-  Scenario: TC-3 Ensure user successfully create new team
+  Scenario: Ensure user successfully create new team
     Given user in page Home
     When user open ones company
     Then user in page Company
@@ -13,7 +13,7 @@ Feature: Create Team
     Then user successfully create team
 
   @Negative
-  Scenario: TC-4 Ensure user failed create new team with null name and description
+  Scenario: Ensure user failed create new team with null name and description
     Given user in page Home
     When user open ones company
     Then user in page Company
