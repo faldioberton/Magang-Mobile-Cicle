@@ -13,4 +13,5 @@ public class environment {
 
         public static WebDriverWait wait;
         public static String baseUrl = "http://127.0.0.1:4723/wd/hub";
-}
+    }
+

@@ -6,9 +6,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/Feature/TC3_Blast-MainPage.feature",
+        features = "src/test/resources/Feature/TC12_GroupChat.feature",
         glue = "StepDefinition",
-        plugin = "html:target/HTML_report.html"
+        plugin = "html:target/HTML_report.html",
+        tags = "@FirstRelease"
 )
 public class runAll {
 }

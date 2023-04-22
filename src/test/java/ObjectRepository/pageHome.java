@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 public class pageHome {
 
     By btn_createcompany = By.xpath("//android.widget.Button[@content-desc='Create New Company']");
-
     By pageHome = By.xpath("//android.widget.ImageView[@content-desc='logo']");
     By field_name = By.xpath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.view.View[1]/android.view.View[1]/android.view.View[1]/android.view.View[1]/android.widget.EditText[1]");
     By field_desc = By.xpath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.view.View[1]/android.view.View[1]/android.view.View[1]/android.view.View[1]/android.widget.EditText[2]");

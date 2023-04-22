@@ -26,7 +26,7 @@ public class hook extends environment{
         capabilities.setCapability("udid", "bfb80eb1");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("app", "C:/Users/asus/Desktop/stagging.apk");
-        capabilities.setCapability("platformVersion", "10");
+        capabilities.setCapability("platformVersion", "11");
         capabilities.setCapability("appPackage", "staging.cicle");
         capabilities.setCapability("appActivity", "staging.cicle.MainActivity");
 

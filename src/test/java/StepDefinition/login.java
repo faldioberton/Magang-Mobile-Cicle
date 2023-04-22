@@ -29,7 +29,7 @@ public class login extends environment{
     }
     public void swipehorizontal() throws InterruptedException{
 
-        scroll.swiperight(driver, 0.7, 0.3,0.5,0.5 );
+//        scroll.swiperight(driver, 0.7, 0.3,0.5,0.5 );
     }
 
     public void user_found_button_sign_in() {

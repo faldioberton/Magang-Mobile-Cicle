@@ -39,6 +39,9 @@ public class blast extends environment{
     }
     @Then("user click feature Blast")
     public void user_click_feature_blast() {
+        wait.until(
+                ExpectedConditions.elementToBeClickable(pageBlast.getBtn_blast())
+        );
         driver.findElement(pageBlast.getBtn_blast()).click();
     }
     @Then("user create new post")
@@ -219,6 +222,13 @@ public class blast extends environment{
         );
         driver.findElement(pageBlast.getIcn_strikethrough()).click();
     }
+    @Then("user in page Blast")
+    public void user_in_page_blast() {
+        wait.until(
+                ExpectedConditions.visibilityOfElementLocated(pageBlast.getIcon_plus())
+        );
+        driver.findElement(pageBlast.getIcon_plus()).isDisplayed();
+    }
     @And("user input description")
     public void user_input_description() {
         driver.findElement(pageBlast.getField_desc()).click();
@@ -249,10 +259,10 @@ public class blast extends environment{
         String input = " ̶P̶r̶o̶j̶e̶c̶t̶ ̶a̶d̶a̶l̶a̶h̶ ̶i̶s̶t̶i̶l̶a̶h̶ ̶y̶a̶n̶g̶ ̶s̶e̶r̶i̶n̶g̶ ̶d̶i̶d̶e̶n̶g̶a̶r̶ ̶t̶e̶r̶u̶t̶a̶m̶a̶ ̶b̶a̶g̶i̶ ̶A̶n̶d̶a̶ ̶y̶a̶n̶g̶ ̶s̶e̶d̶a̶n̶g̶ ̶t̶e̶r̶l̶i̶b̶a̶t̶ ̶d̶i̶ ̶d̶a̶l̶a̶m̶ ̶s̶u̶a̶t̶u̶ ̶p̶e̶r̶u̶s̶a̶h̶a̶a̶n̶";
         driver.findElement(pageBlast.getField_desc()).sendKeys(input);
     }
-    @Then("user scroll down")
+    @And("user scroll down")
     public void user_scroll_down() throws InterruptedException {
 //       for (int i=0; i<=1; i++) {
-           sc.swipedown(driver, 0.8, 0.5, 0.2, 0.5);
+           sc.swipedown(driver, 0.8, 0.5, 0.4, 0.5);
            Thread.sleep(10);
        }
 //    }
@@ -331,6 +341,9 @@ public class blast extends environment{
     }
     @And("user click icon due date")
     public void user_click_icon_due_date() {
+        wait.until(
+                ExpectedConditions.visibilityOfElementLocated(pageBlast.getBtn_icondudate())
+        );
         driver.findElement(pageBlast.getBtn_icondudate()).click();
     }
     @And("user input next week date")
